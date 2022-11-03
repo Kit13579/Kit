@@ -1,0 +1,48 @@
+print('Задача 5. Недоделка 2')
+first_n = input("Введите первое число: ")
+second_n = input("Введите второе число: ")
+first_num_count = 0
+second_num_count = 0
+temp = first_n
+temp2 = second_n
+num_count2 = 0
+
+def tasks(n,num_count2,nc,first_n,second_n):
+  num_count(num_count,n,nc)
+  if nc == 3:
+    if num_count2 < nc:
+      print("В первом числе меньше трёх цифр.")
+    else:        
+      modified_num(n,num_count2,first_n)
+      print('Изменённое первое число:', n)
+  else:
+    if num_count2 < nc:
+      print("В первом числе меньше трёх цифр.")
+    else:  
+      modified_num2(n,num_count2,second_n)
+      print('Изменённое второе число:', second_n)
+
+def num_count(num_count2,n,nc):
+  for num_count3 in n:
+    num_count2 += 1
+
+def modified_num (n,num_count2,first_n):
+  first_n = int(first_n)
+  last_digit = n % 10
+  first_digit = n // 10 ** (num_count2 - 1)
+  between_digits = n % 10 ** (num_count2 - 1) // 10
+  n = last_digit * 10 ** (num_count2 - 1) + between_digits * 10 + first_digit
+
+def modified_num2 (n,num_count2,second_n):
+  second_n = int(second_n)
+  last_digit = n % 10
+  first_digit = n // 10 ** (num_count2 - 1)
+  between_digits = n % 10 ** (num_count2 - 1) // 10
+  n = last_digit * 10 ** (num_count2 - 1) + between_digits * 10 + first_digit
+
+tasks(first_n,first_num_count,3,first_n,second_n)
+first_n = int(first_n)
+
+
+tasks(second_n,second_num_count,4,first_n,second_n)
+second_n = int(second_n)
